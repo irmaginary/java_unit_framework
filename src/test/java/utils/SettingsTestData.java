@@ -34,7 +34,7 @@ public class SettingsTestData {
         return deserializeJson(USER_FILE_PATH, UserData.class);
     }
 
-    public DataTableData getDataTableData() {
+    public static DataTableData getDataTableData() {
         return deserializeJson(DATA_TABLE_FILE_PATH, DataTableData.class);
     }
 
