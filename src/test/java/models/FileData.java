@@ -6,4 +6,8 @@ import lombok.Getter;
 public class FileData {
     private String uploadFile;
     private String downloadFile;
+
+    public String getUploadFile() {
+        return uploadFile;
+    }
 }
