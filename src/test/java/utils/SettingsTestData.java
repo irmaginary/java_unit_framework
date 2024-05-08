@@ -13,7 +13,7 @@ import java.io.FileReader;
 @UtilityClass
 public class SettingsTestData {
     public static final String RESOURCES_PATH = "src/test/resources/";
-    public final String TEST_DATA_PATH = RESOURCES_PATH + "testdata/";
+    public static final String TEST_DATA_PATH = RESOURCES_PATH + "testdata/";
     private final String ENVIRONMENT_PATH = RESOURCES_PATH + "environment/";
     private final String USER_FILE_PATH = TEST_DATA_PATH + "userData.json";
     private final String DATA_TABLE_FILE_PATH = TEST_DATA_PATH + "dataTableData.json";

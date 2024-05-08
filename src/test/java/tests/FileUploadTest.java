@@ -1,10 +1,13 @@
 package tests;
 
+import constants.MainPageNavigation;
+import org.testng.Assert;
 import pages.FileUploadPage;
-import pages.FileUploadpage;
 import pages.UploadedFilePage;
 import utils.SettingsTestData;
 import org.testng.annotations.Test;
+
+import java.io.File;
 
 public class FileUploadTest extends BaseTest {
     private FileUploadPage fileUploadPage = new FileUploadPage();
@@ -14,7 +17,9 @@ public class FileUploadTest extends BaseTest {
 
     @Test
     public void fileUploadTest() {
-
-        // todo: add test
+        mainPage.clickNavigationLink(MainPageNavigation.FILE_UPLOAD);
+        fileUploadPage.uploadFile(new File(FILE_PATH).getAbsolutePath());
+        fileUploadPage.clickSubmitBtn();
+        Assert.assertEquals(uploadedFilePage.getUploadedFileName(), FILE_NAME, "File name is not correct or missed");
     }
 }
