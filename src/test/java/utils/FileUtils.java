@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 @UtilityClass
 public class FileUtils {
 
-    public boolean isFileExist(File file) {
+    public static boolean isFileExist(File file) {
         try {
             Awaitility.await().atMost(SettingsTestData.getEnvData().getWait(), TimeUnit.SECONDS).until(file::exists);
         }
@@ -20,7 +20,7 @@ public class FileUtils {
         return true;
     }
 
-    public void deleteFileIfExist(File file) {
+    public static void deleteFileIfExist(File file) {
         if (file.exists()) {
             file.delete();
         }

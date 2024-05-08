@@ -12,7 +12,7 @@ import java.io.FileReader;
 
 @UtilityClass
 public class SettingsTestData {
-    public final String RESOURCES_PATH = "src/test/resources/";
+    public static final String RESOURCES_PATH = "src/test/resources/";
     public final String TEST_DATA_PATH = RESOURCES_PATH + "testdata/";
     private final String ENVIRONMENT_PATH = RESOURCES_PATH + "environment/";
     private final String USER_FILE_PATH = TEST_DATA_PATH + "userData.json";
@@ -38,7 +38,7 @@ public class SettingsTestData {
         return deserializeJson(DATA_TABLE_FILE_PATH, DataTableData.class);
     }
 
-    public FileData getFileData() {
+    public static FileData getFileData() {
         return deserializeJson(FILE_DATA_PATH, FileData.class);
     }
 

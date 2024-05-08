@@ -1,6 +1,9 @@
 package tests;
 
+import constants.MainPageNavigation;
+import org.testng.Assert;
 import pages.FileDownloadPage;
+import utils.FileUtils;
 import utils.SettingsTestData;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
@@ -15,11 +18,14 @@ public class FileDownloadTest extends BaseTest {
 
     @Test
     public void fileDownloadTest() {
-        // todo: add test
+        mainPage.clickNavigationLink(MainPageNavigation.FILE_DOWNLOAD);
+        Assert.assertTrue(fileDownloadPage.isFileDownloadLinkDisplayed(FILE_NAME), "File is not displayed");
+        fileDownloadPage.clickFileDownloadLink(FILE_NAME);
+        Assert.assertTrue(FileUtils.isFileExist(downloadedFile), "File is not downloaded");
     }
 
     @AfterMethod
     public void deleteFile() {
-        // todo: add delete file
+        FileUtils.deleteFileIfExist(downloadedFile);
     }
 }
