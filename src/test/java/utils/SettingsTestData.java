@@ -25,12 +25,12 @@ public class SettingsTestData {
         return ENVIRONMENT_CONFIG.getValue("/env").toString();
     }
 
-    public EnvData getEnvData() {
+    public static EnvData getEnvData() {
         String envConfigPath = String.format("%s%s.json", ENVIRONMENT_PATH, getCurrentEnvironment());
         return deserializeJson(envConfigPath, EnvData.class);
     }
 
-    public UserData getUserData() {
+    public static UserData getUserData() {
         return deserializeJson(USER_FILE_PATH, UserData.class);
     }
 

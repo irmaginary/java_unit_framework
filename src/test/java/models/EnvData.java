@@ -12,4 +12,7 @@ public class EnvData {
     public String getHost() {
         return protocol + "://" + domain;
     }
+    public String getDomain() {
+        return domain;
+    }
 }
